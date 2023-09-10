@@ -1,4 +1,4 @@
-![report automation](./demo/Report%20Automation.jpg)
+![report automation]([./demo/Report%20Automation.jpg](https://github.com/KolimaH4x/Early-Warning-Automation/blob/main/demo/Report%20Automation.jpg))
 
 # Automated Early Warning Reports in Python :bar_chart:	
 Automate your Early Warning reports with Python :snake:. \
@@ -13,4 +13,4 @@ It is designed to run monthly and retrieves all CVEs released in the KEV catalog
 
 ## Report Demo :card_index_dividers:
 ### Convert Report to PDF
-![demo](./demo/Demo.gif)
+![demo](https://github.com/KolimaH4x/Early-Warning-Automation/blob/main/demo/Demo.gif)
