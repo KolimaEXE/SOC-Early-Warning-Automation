@@ -1,4 +1,4 @@
-![report automation]([./demo/Report%20Automation.jpg](https://github.com/KolimaH4x/Early-Warning-Automation/blob/main/demo/Report%20Automation.jpg))
+![report automation](https://github.com/KolimaH4x/Early-Warning-Automation/blob/main/demo/Report%20Automation.jpg)
 
 # Automated Early Warning Reports in Python :bar_chart:	
 Automate your Early Warning reports with Python :snake:. \
