@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>    
+	<title>Early Warning</title>
+</head>
+
+<body>
+
+    <!-- CVE COVER -->
+
+    <div class="cover-container">
+        <img src="./img/CISA.png" class="cover-logo">
+        <h1 class="title">Early Warning</h1>
+        <h2 class="subtitle">Known Exploited Vulnerabilities</h2>
+        <h3 class="subtitle-2">{month} {year}</h3>
+    </div>
+
+    <!-- CVE PAGE  -->
+
+    <div class="page-container">
+        <div class="page-inner">
+            <header>
+                <div class="top-section">
+                    <p>EARLY WARNING - <span>KEV</span></p>
+                    <p>Page 2</p>
+                </div>
+                <hr>
+            </header>
+
+            <h1 class="info-title">REFERENCES</h1>
+            <table class="kev-table">
+                <tr>
+                    <th>NAME</th>
+                    <th>CATALOGUE VERSION</th>
+                </tr>
+                <tr>
+                    <td>{kev_references}</td>
+                    <td>{kev_version}</td>
+                </tr>
+            </table>
+            
+            <h1>TOP CVE OF THE MONTH</h1>
+            <p>
+                The following table contains a list of the most significant vulnerabilities identified in the CISA's KEV (Known Exploited Vulnerabilities) catalog over the 
+                course of the month. The KEV catalog is a critical resource as it provides a list of known vulnerabilities actively exploited by threat actors. <br>
+                Within the report, the most relevant vulnerabilities discovered during the month will be reviewed and documented, their technical characteristics analyzed, 
+                potential security impacts, and recommended countermeasures to mitigate associated risks.
+            </p>
+
+            {html_kev_table}
+
+            <footer>
+                <hr>
+                <div class="bottom-section">
+                    <p>CONFIDENTIAL - <span style="color: #FFC000;">TLP:AMBER</span></p>
+                    <img src="./img/logo.png" class="footer-logo">
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    {global_html_cve}
+
+</body>
