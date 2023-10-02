@@ -13,7 +13,7 @@ import os
 
 # Date & Time
 date = datetime.date.today()
-past_date = date #- relativedelta(months=1)
+past_date = date - relativedelta(months=1)
 year = past_date.year
 month = past_date.month
 month = calendar.month_name[month]
