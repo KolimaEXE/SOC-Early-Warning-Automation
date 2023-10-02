@@ -58,12 +58,48 @@ df_kev.rename(columns={'cveID': 'CVE', 'vendorProject': 'VENDOR', 'product': 'PR
 
 cve_list = df_kev['CVE'].to_list()
 
-kev_table = df_kev.to_html(index=False)
-html_kev_table = kev_table.replace('<table border="1" class="dataframe">', '<table class="cve-table">').replace('\n', '').replace('<tr style="text-align: right;">', '<tr>')
+if len(df_kev) <= 16:
+    page_counter = 3
+    kev_table = df_kev.to_html(index=False)
+    html_kev_table = kev_table.replace('<table border="1" class="dataframe">', '<table class="cve-table">').replace('\n', '').replace('<tr style="text-align: right;">', '<tr>')
+    html_long_kev = ""
+else:
+    page_counter = 4
+    df_kev_pt1 = df_kev.head(16)
+    kev_table = df_kev_pt1.to_html(index=False)
+    html_kev_table = kev_table.replace('<table border="1" class="dataframe">', '<table class="cve-table">').replace('\n', '').replace('<tr style="text-align: right;">', '<tr>')
+    
+    df_kev_pt2 = df_kev.tail(len(df_kev) - 16)
+    kev_table_2 = df_kev_pt2.to_html(index=False)
+    html_kev_table_2 = kev_table_2.replace('<table border="1" class="dataframe">', '<table class="cve-table">').replace('\n', '').replace('<tr style="text-align: right;">', '<tr>')
+
+
+    html_long_kev = f"""
+    <div class="page-container">
+        <div class="page-inner">
+            <header>
+                <div class="top-section">
+                    <p>EARLY WARNING - <span>KEV</span></p>
+                    <p>Page 3</p>
+                </div>
+                <hr>
+            </header>
+            <br>
+            {html_kev_table_2}
+            
+            <footer>
+                <hr>
+                <div class="bottom-section">
+                    <p>CONFIDENTIAL - <span style="color: #FFC000;">TLP:AMBER</span></p>
+                    <img src="./img/logo.png" class="footer-logo">
+                </div>
+            </footer>
+        </div>
+    </div>
+    """
 
 # CVE NIST Data
 
-page_counter = 3
 global_html_cve = ""
 
 # CVE Data
@@ -460,13 +496,14 @@ global_html_cve.replace('\n','')
 
 # Variables for HTML and formatting
 html_vars = {
-             "month": month,
-             "year": year,
-             "kev_references": kev_references,
-             "kev_version": kev_version,
-             "html_kev_table": html_kev_table,
-             "global_html_cve": global_html_cve
-             }
+            "month": month,
+            "year": year,
+            "kev_references": kev_references,
+            "kev_version": kev_version,
+            "html_kev_table": html_kev_table,
+            "global_html_cve": global_html_cve,
+            "html_long_kev": html_long_kev
+            }
 html = html_template.format(**html_vars)
 
 # HTML Report Writing
