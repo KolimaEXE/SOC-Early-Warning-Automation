@@ -12,5 +12,4 @@ It is designed to run monthly and retrieves all CVEs released in the KEV catalog
 * `pyecharts` Website https://pyecharts.org/#/
 
 ## Report Demo :card_index_dividers:
-### Convert Report to PDF
 ![demo](https://github.com/KolimaH4x/Early-Warning-Automation/blob/main/demo/Demo.gif)
